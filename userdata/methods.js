@@ -15,6 +15,7 @@ const createTableMethod = async (request, response, next) => {
 };
 
 const addUserDetailsMethod = async (request, response, next) => {
+  try{
   const db = await connectToDb();
 
   const { id, name, password } = request.body;
@@ -36,6 +37,10 @@ const addUserDetailsMethod = async (request, response, next) => {
     return next();
   } else {
     request.addUserDetailsResponse = { failed: "User name already exist" };
+    return next();
+  }
+  }catch(e){
+    request.addUserDetailsResponse = { failed: e };
     return next();
   }
 };
