@@ -1,0 +1,14 @@
+GET http://localhost:3005/api/get/user
+###
+
+POST http://localhost:3005/api/post/create/user/table
+###
+
+POST http://localhost:3005/api/post/add/user/details
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Rogulraj S",
+    "password": "hello"
+}
