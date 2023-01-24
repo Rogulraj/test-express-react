@@ -13,6 +13,7 @@ const connectToDb = async () => {
     db = await open({
       filename: dbPath,
       driver: sqlite3.Database,
+      mode: sqlite3.OPEN_READWRITE,
     });
   } catch (err) {
     console.log(err);
